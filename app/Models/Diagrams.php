@@ -16,5 +16,6 @@ class Diagrams extends Model
         'is_active',
         'created_by',
         'created_date',
+        'sheet_url',
     ];
 }

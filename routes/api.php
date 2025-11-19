@@ -11,6 +11,7 @@ Route::get('/user', function (Request $request) {
 
 Route::get('/diagrams/display', [DiagramController::class , 'displayDiagrams']);
 Route::post('/diagrams/store', [DiagramController::class , 'storeDiagrams']);
+Route::put('/diagrams/update/{id}', [DiagramController::class , 'updateDiagrams']);
 
 Route::get('/color/display', [ColorNodeController::class , 'displayDiagramsColorNode']);
 Route::post('/color/store', [ColorNodeController::class , 'storeDiagramsColorNode']);

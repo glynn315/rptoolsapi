@@ -18,6 +18,7 @@ class DiagramController extends Controller
             'name' => 'string|required', 
             'description' => 'string|required', 
             'json_data' => 'string|required', 
+            'sheet_url' => 'string|required', 
             's_bpartner_i_employee_id' => 'integer|required', 
             'created_by' => 'integer|required', 
         ]);
@@ -26,6 +27,35 @@ class DiagramController extends Controller
         $diagramsFields['created_date'] = Carbon::now();
 
         $diagrams = Diagrams::create($diagramsFields);
-        return response()->json(['Diagrams Store Successfuly' , $diagrams],201);
+        return response()->json([
+            'message' => 'Diagrams Store Successfuly', 
+            'data' => $diagrams
+        ],201);
+    }
+    public function updateDiagrams(Request $request, $id)
+    {
+        $diagram = Diagrams::find($id);
+
+        if (!$diagram) {
+            return response()->json(['message' => 'Diagram not found'], 404);
+        }
+
+        $diagramsFields = $request->validate([
+            'name' => 'string|required', 
+            'description' => 'string|required', 
+            'json_data' => 'string|required', 
+            's_bpartner_i_employee_id' => 'integer|required', 
+            'created_by' => 'integer|required', 
+        ]);
+        $diagramsFields['is_shareable'] = false;
+        $diagramsFields['is_active'] = true;
+        $diagramsFields['created_date'] = Carbon::now();
+
+        $diagram->update($diagramsFields);
+
+        return response()->json([
+            'message' => 'Diagram updated successfully',
+            'data' => $diagram
+        ]);
     }
 }
