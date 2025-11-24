@@ -22,6 +22,8 @@ class DiagramController extends Controller
             'name' => 'string|required', 
             'description' => 'string|required', 
             'json_data' => 'string|required', 
+            'line_category' => 'string|required', 
+            'node_data' => 'string|required', 
             'sheet_url' => 'string|required', 
             's_bpartner_i_employee_id' => 'integer|required', 
             'created_by' => 'integer|required', 
@@ -48,6 +50,8 @@ class DiagramController extends Controller
             'name' => 'string|required', 
             'description' => 'string|required', 
             'json_data' => 'string|required', 
+            'line_category' => 'string|required', 
+            'node_data' => 'string|required', 
             's_bpartner_i_employee_id' => 'integer|required', 
             'created_by' => 'integer|required', 
         ]);

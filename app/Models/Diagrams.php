@@ -11,6 +11,8 @@ class Diagrams extends Model
         'name',
         'description',
         'json_data',
+        'line_category',
+        'node_data',
         'is_shareable',
         's_bpartner_i_employee_id',
         'is_active',
