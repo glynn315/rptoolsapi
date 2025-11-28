@@ -54,6 +54,7 @@ class DiagramController extends Controller
             'json_data' => 'string|required', 
             'line_category' => 'string|nullable', 
             'node_data' => 'string|nullable', 
+            'sheet_url' => 'string|nullable', 
             'dependency' => 'string|nullable', 
             'dependency_value' => 'string|nullable', 
             's_bpartner_i_employee_id' => 'integer|required', 
